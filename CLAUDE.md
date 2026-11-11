@@ -5,7 +5,7 @@ Herramienta personal de Hugo (no es de un cliente). Dibuja un botón pequeño so
 
 - Stack: Swift (AppKit + SwiftUI) en un solo archivo, compilado con `swiftc`, sin Xcode project. Un script de bash con `jq` para capturar los datos.
 - Carpeta: `~/Desktop/Proyectos/WarpConsumo`. La app, su identificador (`pe.hugorocha.usoclaudewarp`) y la carpeta de datos (`~/.claude/uso-claude/`) conservan el nombre original «UsoClaudeWarp».
-- Repo: `Perezhppr/WarpConsumo` (privado), rama `main`.
+- Repo: `Perezhppr/WarpConsumo` (**público**, licencia MIT), rama `main`. Todo lo que se suba aquí lo ve cualquiera, incluido este `CLAUDE.md`: nada de datos de clientes ni de otros proyectos.
 - No se publica en ningún lado: corre en la Mac de Hugo.
 
 ## Estado actual (2026-11-10)
@@ -22,6 +22,8 @@ Herramienta personal de Hugo (no es de un cliente). Dibuja un botón pequeño so
 - **Hover por posición del cursor** (monitor global de movimiento + tick), no solo por áreas de seguimiento: las áreas perdían el evento de salida.
 - **Ritmo adaptativo**: revisa la ventana 30 veces por segundo solo mientras se mueve y 4 por segundo en reposo. Con 30 fijas gastaba ~5 % de CPU.
 - **«Costo equivalente (API)»**: es el estimado que da Claude Code a precio de lista, no un cobro real de la suscripción.
+- **Repo público** (pedido de Hugo, 2026-11-10): para que otra gente pueda descargarlo. Por eso hay `README.md` con instrucciones, `LICENSE` (MIT, elegida por Claude como opción habitual; Hugo puede cambiarla) y `docs/captura.png` (recortada para que no salga el avatar de Hugo).
+- **El instalador registra el status line** en `~/.claude/settings.json` solo si no hay uno; si ya existe otro, avisa y no lo toca. Guarda copia en `settings.json.antes-de-warpconsumo`.
 - **Arranque automático pendiente**: el modo automático de Claude Code bloqueó instalar el LaunchAgent, así que lo corre Hugo.
 
 ## Cómo trabajar aquí
@@ -41,3 +43,4 @@ Herramienta personal de Hugo (no es de un cliente). Dibuja un botón pequeño so
 ## Registro
 - 2026-11-10: Hugo pidió un botón en Warp para ver su uso al pasar el mouse, con un panel tipo saldo. Se creó el proyecto, el status line y la app. Costó: Warp no admite botones propios (se resolvió con una ventana flotante), el panel no se cerraba al salir (se cambió a hover por posición del cursor) y la primera versión gastaba ~5 % de CPU (se bajó a ~0.3 % con ritmo adaptativo). El arranque automático quedó para Hugo porque el modo automático bloqueó el LaunchAgent.
 - 2026-11-10: Hugo pidió guardar todo en la carpeta `WarpConsumo` (creada por él dentro de Proyectos) y subir el código a GitHub. Se movió el proyecto desde `UsoClaudeWarp`, se reabrió la app desde la nueva ruta y se subió al repo privado `Perezhppr/WarpConsumo`.
+- 2026-11-10: Hugo pidió que el repo sea público para que la gente lo descargue. Se agregó README, licencia MIT y captura; el instalador ahora verifica `swiftc` y `jq` y registra el status line (probado con 5 casos de `settings.json`). Se cambió la visibilidad a público.
