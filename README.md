@@ -52,6 +52,8 @@ No se usa el token de tu cuenta, no se llama a ninguna API y nada sale de tu Mac
 
 Por eso mismo, los números se actualizan cuando Claude Code responde algo. Lo que uses en claude.ai o en la app de escritorio aparece con la siguiente respuesta de Claude Code.
 
+Con varias sesiones de Claude Code abiertas, cada una trae el uso tal como estaba en su última respuesta. El script se queda con el dato más reciente y descarta los de sesiones inactivas, así el botón y la línea de estado de todas las sesiones muestran el mismo número. El bloque «Última sesión de Claude Code» del panel sí cambia: muestra la sesión que se redibujó de último, normalmente la pestaña en la que estás.
+
 El «Costo equivalente (API)» es el estimado que calcula Claude Code a precio de lista. No es un cobro de tu suscripción.
 
 ## Si ya tienes un status line
